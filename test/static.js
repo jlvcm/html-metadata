@@ -19,17 +19,15 @@ describe('static files', function() {
 	it('should get correct info from turtle movie file', function() {
 		expected = JSON.parse(fs.readFileSync('./test/static/turtle_movie.json'));
 		$ = cheerio.load(fs.readFileSync('./test/static/turtle_movie.html'));
-		return meta.parseAll($).then(function(results){
-			assert.deepEqual(results, expected);
-		});
+		const results = meta.parseAll($)
+		assert.deepEqual(results, expected);
 	});
 
 	it('should get correct info using loadFromString method from turtle movie file ', function() {
 		expected = JSON.parse(fs.readFileSync('./test/static/turtle_movie.json'));
 		var html = fs.readFileSync('./test/static/turtle_movie.html');
-		return meta.loadFromString(html).then(function(results){
-			assert.deepEqual(results, expected);
-		});
+		const results = meta.loadFromString(html)
+		assert.deepEqual(results, expected);
 	});
 
 	it('should get correct info using loadFromFile method from turtle movie file ', function() {
@@ -60,16 +58,14 @@ describe('static files', function() {
 	it('should get correct info from turtle article file', function() {
 		expected = JSON.parse(fs.readFileSync('./test/static/turtle_article.json'));
 		$ = cheerio.load(fs.readFileSync('./test/static/turtle_article.html'));
-		return meta.parseAll($).then(function(results){
-			assert.deepEqual(results, expected);
-		});
+		const results = meta.parseAll($);
+		assert.deepEqual(results, expected);
 	});
 
 	it('should be case insensitive on turtle article file', function() {
 		expected = JSON.parse(fs.readFileSync('./test/static/turtle_article.json'));
 		$ = cheerio.load(fs.readFileSync('./test/static/turtle_article_case.html'));
-		return meta.parseAll($).then(function(results){
-			assert.deepEqual(results, expected);
-		});
+		const results = meta.parseAll($)
+		assert.deepEqual(results, expected);
 	});
 });

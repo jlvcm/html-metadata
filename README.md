@@ -42,13 +42,13 @@ The scrape method used here invokes the parseAll() method, which uses all the av
 Promise-based:
 ```js
 var cheerio = require('cheerio');
-var preq = require('preq'); // Promisified request library
+var request = require('request-promise'); // Promisified request library
 var parseDublinCore = require('html-metadata').parseDublinCore;
 
 var url = "http://blog.woorank.com/2013/04/dublin-core-metadata-for-seo-and-usability/";
 
-preq(url).then(function(response){
-	$ = cheerio.load(response.body);
+request(url).then(function(response){
+	$ = cheerio.load(response);
 	return parseDublinCore($).then(function(metadata){
 		console.log(metadata);
 	});
@@ -114,8 +114,3 @@ The method parseGeneral obtains the following general metadata:
 ```npm test``` runs the mocha tests
 
 ```npm run-script coverage``` runs the tests and reports code coverage
-
-## Contributing
-
-Contributions welcome! All contibutions should use [bluebird promises](https://github.com/petkaantonov/bluebird) instead of callbacks,
-and be .nodeify()-ed in index.js so the functions can be used as either callbacks or Promises.

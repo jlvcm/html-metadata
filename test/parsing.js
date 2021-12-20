@@ -32,10 +32,9 @@ describe('parsing', function() {
 				genre: 'article'
 			}
 		};
+		const results = meta.parseCOinSTitle(title);
 
-		return meta.parseCOinSTitle(title).then(function(results){
-			assert.deepEqual(results, expected);
-		});
+		assert.deepEqual(results, expected);
 	});
 
 	it('should get correct structure from html encoded string', function() {
@@ -59,9 +58,8 @@ describe('parsing', function() {
 			}
 		};
 
-		return meta.parseCOinSTitle(title).then(function(results){
-			assert.deepEqual(results, expected);
-		});
+		const results =  meta.parseCOinSTitle(title)
+		assert.deepEqual(results, expected);
 	});
 
 	it('should not add rft object when there are no valid keys', function() {
@@ -72,10 +70,8 @@ describe('parsing', function() {
 			rfr_id: 'info:sid/crossref.org:search',
 			rft_val_fmt: 'info:ofi/fmt:kev:mtx:journal',
 		};
-
-		return meta.parseCOinSTitle(title).then(function(results){
-			assert.deepEqual(results, expected);
-		});
+		const results = meta.parseCOinSTitle(title);
+		assert.deepEqual(results, expected);
 	});
 
 	it('should not replace encoded + symbol in doi', function() {
@@ -86,10 +82,8 @@ describe('parsing', function() {
 			rfr_id: 'info:sid/crossref.org:search',
 			rft_val_fmt: 'info:ofi/fmt:kev:mtx:journal',
 		};
-
-		return meta.parseCOinSTitle(title).then(function(results){
-			assert.deepEqual(results, expected);
-		});
+		const results = meta.parseCOinSTitle(title);
+		assert.deepEqual(results, expected);
 	});
 
 
@@ -109,10 +103,8 @@ describe('parsing', function() {
 				]
 			}
 		};
-
-		return meta.parseCOinSTitle(title).then(function(results){
-			assert.deepEqual(results, expected);
-		});
+		const results = meta.parseCOinSTitle(title);
+		assert.deepEqual(results, expected);
 	});
 
 	it('should add list for issn and aucorp field', function() {
@@ -129,10 +121,8 @@ describe('parsing', function() {
 				]
 			}
 		};
-
-		return meta.parseCOinSTitle(title).then(function(results){
-			assert.deepEqual(results, expected);
-		});
+		const results = meta.parseCOinSTitle(title);
+		assert.deepEqual(results, expected);
 	});
 
 	it('should ignore bad hierarchical keys', function() {
@@ -146,10 +136,8 @@ describe('parsing', function() {
 				genre: 'article'
 			}
 		};
-
-		return meta.parseCOinSTitle(title).then(function(results){
-			assert.deepEqual(results, expected);
-		});
+		const results = meta.parseCOinSTitle(title);
+		assert.deepEqual(results, expected);
 	});
 
 

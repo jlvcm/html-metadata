@@ -4,10 +4,9 @@
   "description": "Scrapes metadata of several different standards",
   "main": "index.js",
   "dependencies": {
-    "bluebird": "^3.7.1",
-    "cheerio": "1.0.0-rc.2",
-    "microdata-node": "0.2.1",
-    "preq": "^0.5.12"
+    "cheerio": "^1.0.0-rc.10",
+    "microdata-node": "^0.2.1",
+    "request-promise": "^4.2.6"
   },
   "devDependencies": {
     "istanbul": "0.4.5",
@@ -41,7 +40,8 @@
   "contributors": [
     "Krzysztof Zbudniewek <krzysztof.zbudniewek@gmail.com>",
     "Geoffrey Mon <geofbot@gmail.com>",
-    "Scimonster <tehalmightyscimonster@gmail.com>"
+    "Scimonster <tehalmightyscimonster@gmail.com>",
+    "João Melo <joaolvcm@gmail.com>"
   ],
   "license": "MIT",
   "bugs": {
