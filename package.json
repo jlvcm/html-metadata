@@ -5,12 +5,12 @@
   "main": "index.js",
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
-    "microdata-node": "^0.2.1",
+    "microdata-node": "^2.0.0",
     "request-promise": "^4.2.6"
   },
   "devDependencies": {
     "istanbul": "0.4.5",
-    "mocha": "4.0.1",
+    "mocha": "^9.1.3",
     "mocha-jshint": "2.3.1",
     "mocha-lcov-reporter": "1.3.0"
   },
